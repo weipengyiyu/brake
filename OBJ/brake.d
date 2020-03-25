@@ -40,3 +40,4 @@
 ..\obj\brake.o: ..\HARDWARE\CAN\can.h
 ..\obj\brake.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\brake.o: brake.h
+..\obj\brake.o: ..\HARDWARE\WDG\wdg.h

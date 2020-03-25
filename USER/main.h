@@ -11,6 +11,7 @@
 #include "can.h" 
 #include "timer.h"
 #include "brake.h"
+#include "wdg.h"
 
 void PeriphInit(void);
 
