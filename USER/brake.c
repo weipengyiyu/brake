@@ -18,7 +18,7 @@ void recv_heart(u8 *buf)
 	}
 #endif
 	
-		printf(" year%d  mouth%d  day%d  hour%d  min%d  sec%d  total%d ", calendar.w_year, 	
+		printf(" %d %d %d %d %d %d tal%d ", calendar.w_year, 	
 		calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec, recv_total);
 	}
 					

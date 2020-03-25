@@ -10,7 +10,7 @@ void TIM1_Int_Init(u16 arr,u16 psc)
 	TIM_TimeBaseStructure.TIM_Prescaler =psc; 
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; 
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up; 
-	TIM_TimeBaseStructure.TIM_RepetitionCounter=4;									//2√Î
+	TIM_TimeBaseStructure.TIM_RepetitionCounter=7;									//4√Î
 	TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure); 
 	TIM_ITConfig(TIM1,TIM_IT_Update,ENABLE); 
 
