@@ -1,5 +1,7 @@
 #include "main.h"
 
+static int enter_brake = 0;
+
 void TIM1_Int_Init(u16 arr,u16 psc)
 {
 	TIM_TimeBaseInitTypeDef TIM_TimeBaseStructure;
@@ -10,7 +12,7 @@ void TIM1_Int_Init(u16 arr,u16 psc)
 	TIM_TimeBaseStructure.TIM_Prescaler =psc; 
 	TIM_TimeBaseStructure.TIM_ClockDivision = TIM_CKD_DIV1; 
 	TIM_TimeBaseStructure.TIM_CounterMode = TIM_CounterMode_Up; 
-	TIM_TimeBaseStructure.TIM_RepetitionCounter=7;									//4秒
+	TIM_TimeBaseStructure.TIM_RepetitionCounter=0;									
 	TIM_TimeBaseInit(TIM1, &TIM_TimeBaseStructure); 
 	TIM_ITConfig(TIM1,TIM_IT_Update,ENABLE); 
 
@@ -25,6 +27,7 @@ void TIM1_Int_Init(u16 arr,u16 psc)
 void TIM1_UP_IRQHandler(void) 
 {
 	u8 canbuf[8] = {0};
+	int temp = 0;
 	if(TIM_GetITStatus(TIM1, TIM_IT_Update) != RESET) 
 	{
 		TIM_ClearITPendingBit(TIM1, TIM_IT_Update); 
@@ -32,12 +35,14 @@ void TIM1_UP_IRQHandler(void)
 
 		//判断是否收到心跳包
 #if 1
-		if(Can_Receive_Msg(canbuf))
+		temp = Can_Receive_Msg(canbuf);
+		if(temp == 8)
 		{
+			enter_brake = 1;
 			brake();												//正常接收心跳包，置一
 			recv_heart(canbuf);
 		}
-		else
+		else if((temp != 8) && (is_brake() == 1) &&(enter_brake == 1))
 		{
 			urgency_stop();
 		}

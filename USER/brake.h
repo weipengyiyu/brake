@@ -7,6 +7,6 @@ void recv_heart(u8 *buf);
 void urgency_stop(void);
 void key_brake(void);
 void brake(void);
-
+int is_brake(void);
 
 #endif

@@ -1,18 +1,18 @@
 #include "main.h"
 
-static int recv_total = 0;
 static int flag = 1;
 static int brake_flag = 1;								//没有发送急停
 
 //收到心跳 统计信息（暂时用于统计包数和打印）
 void recv_heart(u8 *buf)
 {	
+	static int recv_cnt = 0;
 	if(flag)
 	{
-		recv_total++;
+		recv_cnt++;
 	
-		printf(" %d %d %d %d %d %d tal%d ", calendar.w_year, 	
-		calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec, recv_total);
+		printf(" %d %d %d %d %d %d cnt%d ", calendar.w_year, 	
+		calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec, recv_cnt);
 	}			
 }
 
@@ -64,3 +64,14 @@ void brake(void)
 	brake_flag = 1;										//正常接收		
 }
 
+int is_brake(void)
+{
+	if(brake_flag == 1)
+	{
+		return 1;
+	}
+	else
+	{
+		return 0;
+	}
+}
