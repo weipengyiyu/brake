@@ -12,6 +12,7 @@
 #include "timer.h"
 #include "brake.h"
 #include "wdg.h"
+#include "rtc.h"
 
 void PeriphInit(void);
 

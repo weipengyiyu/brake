@@ -6,8 +6,9 @@ static int flag = 1;
 //收到心跳 统计信息（暂时用于统计包数和打印）
 void recv_heart(u8 *buf)
 {	
-	//int i;
-	recv_total++;
+	if(flag)
+	{
+		recv_total++;
 	
 	//向串口发送消息
 #if 0
@@ -17,7 +18,10 @@ void recv_heart(u8 *buf)
 	}
 #endif
 	
-	printf("%d ", recv_total);					//这是阻塞发送？串口发送的字符显示没事调试好
+		printf(" year%d  mouth%d  day%d  hour%d  min%d  sec%d  total%d ", calendar.w_year, 	
+		calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec, recv_total);
+	}
+					
 }
 
 void urgency_stop(void)

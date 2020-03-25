@@ -41,3 +41,5 @@
 ..\obj\brake.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\brake.o: brake.h
 ..\obj\brake.o: ..\HARDWARE\WDG\wdg.h
+..\obj\brake.o: ..\HARDWARE\RTC\rtc.h
+..\obj\brake.o: ..\USER\main.h
