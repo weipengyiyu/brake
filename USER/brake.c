@@ -2,6 +2,7 @@
 
 static int recv_total = 0;
 static int flag = 1;
+static int brake_flag = 1;								//没有发送急停
 
 //收到心跳 统计信息（暂时用于统计包数和打印）
 void recv_heart(u8 *buf)
@@ -10,18 +11,9 @@ void recv_heart(u8 *buf)
 	{
 		recv_total++;
 	
-	//向串口发送消息
-#if 0
-	for(i=0;i<8;i++)
-	{
-		USART_SendData(USART1, buf[i]);		//向串口1发送数据
-	}
-#endif
-	
 		printf(" %d %d %d %d %d %d tal%d ", calendar.w_year, 	
 		calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec, recv_total);
-	}
-					
+	}			
 }
 
 void urgency_stop(void)
@@ -34,8 +26,10 @@ void urgency_stop(void)
 	msg[6] = (255>>8) & 0xff;
 	msg[7] = 2;
 	
-	if(flag)
+	//如果进入急停，就不再发送接收？
+	if(flag && brake_flag)
 	{
+		brake_flag = 0;
 		//返回值:0,成功;其他,失败;
 		temp = Can_Send_Msg(msg,8);
 		if(temp)
@@ -56,16 +50,17 @@ void key_brake(void)
 	if(key == KEY0_PRES)										//KEY0_PRES按下
 	{
 		flag = 0;															//保证退出急停模式，不再进入urgency_stop
-		
 		printf("  exit OK    ");
 	}
 	else if(key == KEY1_PRES)										//KEY1_PRES按下
 	{
-		flag = 1;															//
-		
+		flag = 1;														
 		printf("  start OK  ");
 	}
 }
 
-
+void brake(void)
+{
+	brake_flag = 1;										//正常接收		
+}
 

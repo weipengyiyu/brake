@@ -39,7 +39,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (..\HARDWARE\CAN\can.h)(0x5058143E)
 I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
-I (brake.h)(0x5E7572A9)
+I (brake.h)(0x5E7ACFF3)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
 I (..\USER\main.h)(0x5E7AC043)
@@ -104,7 +104,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_tim.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
-F (.\brake.c)(0x5E7ACCC4)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\brake.o --omf_browse ..\obj\brake.crf --depend ..\obj\brake.d)
+F (.\brake.c)(0x5E7ACFD6)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\brake.o --omf_browse ..\obj\brake.crf --depend ..\obj\brake.d)
 I (main.h)(0x5E7AC043)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\HARDWARE\LED\led.h)(0x5510227D)
@@ -144,7 +144,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (..\HARDWARE\CAN\can.h)(0x5058143E)
 I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
-I (brake.h)(0x5E7572A9)
+I (brake.h)(0x5E7ACFF3)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
 I (..\USER\main.h)(0x5E7AC043)
@@ -282,7 +282,7 @@ I (..\HARDWARE\LED\led.h)(0x5510227D)
 I (..\SYSTEM\delay\delay.h)(0x555AC82B)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
-F (..\HARDWARE\TIMER\timer.c)(0x5E7ACD1F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
+F (..\HARDWARE\TIMER\timer.c)(0x5E7AD01F)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
 I (..\USER\main.h)(0x5E7AC043)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (..\HARDWARE\LED\led.h)(0x5510227D)
@@ -322,7 +322,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (..\HARDWARE\CAN\can.h)(0x5058143E)
 I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
-I (..\USER\brake.h)(0x5E7572A9)
+I (..\USER\brake.h)(0x5E7ACFF3)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
 F (..\HARDWARE\WDG\wdg.c)(0x5E7AAFF2)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\wdg.o --omf_browse ..\obj\wdg.crf --depend ..\obj\wdg.d)
@@ -365,7 +365,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (..\HARDWARE\CAN\can.h)(0x5058143E)
 I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
-I (..\USER\brake.h)(0x5E7572A9)
+I (..\USER\brake.h)(0x5E7ACFF3)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
 F (..\HARDWARE\RTC\rtc.c)(0x5E7AC601)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\rtc.o --omf_browse ..\obj\rtc.crf --depend ..\obj\rtc.d)
@@ -408,7 +408,7 @@ I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (..\HARDWARE\CAN\can.h)(0x5058143E)
 I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
-I (..\USER\brake.h)(0x5E7572A9)
+I (..\USER\brake.h)(0x5E7ACFF3)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
 F (..\SYSTEM\delay\delay.c)(0x555AC82A)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC-I E:\my_github\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)

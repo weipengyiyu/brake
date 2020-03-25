@@ -34,6 +34,7 @@ void TIM1_UP_IRQHandler(void)
 #if 1
 		if(Can_Receive_Msg(canbuf))
 		{
+			brake();												//正常接收心跳包，置一
 			recv_heart(canbuf);
 		}
 		else
