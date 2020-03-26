@@ -8,5 +8,6 @@ void urgency_stop(void);
 void key_brake(void);
 void brake(void);
 int is_brake(void);
+void is_flag(void);
 
 #endif

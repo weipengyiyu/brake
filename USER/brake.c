@@ -1,18 +1,22 @@
 #include "main.h"
 
+static int recv_cnt = 0;
 static int flag = 1;
 static int brake_flag = 1;								//没有发送急停
 
 //收到心跳 统计信息（暂时用于统计包数和打印）
 void recv_heart(u8 *buf)
 {	
-	static int recv_cnt = 0;
 	if(flag)
 	{
 		recv_cnt++;
-	
-		printf(" %d %d %d %d %d %d cnt%d ", calendar.w_year, 	
-		calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec, recv_cnt);
+
+		//USART_SendData(USART1, USART_RX_BUF[7]);
+		
+		//printf(" %d-%d-%d-%d:%d:%d ", calendar.w_year, 	
+		//calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec);
+		//delay_ms(5);
+		printf(" cnt%d ", recv_cnt);
 	}			
 }
 
@@ -30,6 +34,7 @@ void urgency_stop(void)
 	if(flag && brake_flag)
 	{
 		brake_flag = 0;
+		flag = 0;
 		//返回值:0,成功;其他,失败;
 		temp = Can_Send_Msg(msg,8);
 		if(temp)
@@ -74,4 +79,9 @@ int is_brake(void)
 	{
 		return 0;
 	}
+}
+
+void is_flag(void)
+{
+		flag = 1;
 }
