@@ -42,13 +42,13 @@ void TIM1_UP_IRQHandler(void)
 		if(temp == 8)
 		{
 			enter_brake++;
-			if(enter_brake > 5)								//正确收到5包数据以上，才能触发urgency
+			if(enter_brake > 5)								//第一次正确收到5包数据以上，才能触发urgency
 			{
 				enter_brake=5;
 				brake();												//正常接收心跳包
 			}
 			
-			if(en_flag)												//进入了急停模式后，正确收到5包数据，才开始记录
+			if(en_flag)												//进入了急停模式后，正确收到1包数据，才开始记录
 			{
 				if(enter_flag == 5)
 				{
@@ -59,23 +59,14 @@ void TIM1_UP_IRQHandler(void)
 				enter_flag++;
 			}
 			
-			//recv_heart(canbuf);
-		canbuf[0] = 1;
-		Can_Send_Msg(canbuf,8);
+			recv_heart(canbuf);
 		}
-		else if((temp != 8) && (is_brake() == 1) && (enter_brake == 5))			
-		{
+		else if((temp != 8) && (enter_brake == 5))			
+		{	
 			en_flag = 1;
 			urgency_stop();
 		}
-		else
-		{
-			if(enter_brake == 5)
-			{
-							canbuf[0] = 2;
-			Can_Send_Msg(canbuf,8);
-			}
-		}
+
 #endif
 	}
 }

@@ -26,7 +26,7 @@ void recv_heart(u8 *buf)
 		//printf(" %d-%d-%d-%d:%d:%d ", calendar.w_year, 	
 		//calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec);
 
-		//printf(" cnt%d ", recv_cnt);
+		printf(" cnt%d ", recv_cnt);
 
 	}			
 }
