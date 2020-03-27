@@ -57,7 +57,7 @@ void key_brake(void)
 		flag = 0;															//保证退出急停模式，不再进入urgency_stop
 		printf("  exit OK    ");
 	}
-	else if(key == KEY1_PRES)										//KEY1_PRES按下
+	else if(key == KEY1_PRES)										//KEY1_PRES按下，开启急停模式
 	{
 		flag = 1;														
 		printf("  start OK  ");
