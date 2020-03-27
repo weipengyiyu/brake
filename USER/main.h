@@ -13,6 +13,7 @@
 #include "brake.h"
 #include "wdg.h"
 #include "rtc.h"
+#include "stmflash.h"
 
 void PeriphInit(void);
 

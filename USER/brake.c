@@ -1,12 +1,22 @@
 #include "main.h"
 
+
+//要写入到STM32 FLASH的字符串数组
+const u8 TEXT_Buffer[]={"l want the world!"};
+#define SIZE sizeof(TEXT_Buffer)		//数组长度
+#define FLASH_SAVE_ADDR  0X08070000		//设置FLASH 保存地址(必须为偶数，且其值要大于本代码所占用FLASH的大小+0X08000000)
+
 static int recv_cnt = 0;
 static int flag = 1;
 static int brake_flag = 1;								//没有发送急停
 
+//STMFLASH_Write(FLASH_SAVE_ADDR,(u16*)TEXT_Buffer,SIZE);
+//STMFLASH_Read(FLASH_SAVE_ADDR,(u16*)datatemp,SIZE);
+
 //收到心跳 统计信息（暂时用于统计包数和打印）
 void recv_heart(u8 *buf)
 {	
+
 	if(flag)
 	{
 		recv_cnt++;
@@ -15,8 +25,9 @@ void recv_heart(u8 *buf)
 		
 		//printf(" %d-%d-%d-%d:%d:%d ", calendar.w_year, 	
 		//calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec);
-		//delay_ms(5);
-		printf(" cnt%d ", recv_cnt);
+
+		//printf(" cnt%d ", recv_cnt);
+
 	}			
 }
 

@@ -30,6 +30,7 @@ void TIM1_UP_IRQHandler(void)
 {
 	u8 canbuf[8] = {0};
 	int temp = 0;
+	
 	if(TIM_GetITStatus(TIM1, TIM_IT_Update) != RESET) 
 	{
 		TIM_ClearITPendingBit(TIM1, TIM_IT_Update); 
@@ -58,12 +59,22 @@ void TIM1_UP_IRQHandler(void)
 				enter_flag++;
 			}
 			
-			recv_heart(canbuf);
+			//recv_heart(canbuf);
+		canbuf[0] = 1;
+		Can_Send_Msg(canbuf,8);
 		}
 		else if((temp != 8) && (is_brake() == 1) && (enter_brake == 5))			
 		{
 			en_flag = 1;
 			urgency_stop();
+		}
+		else
+		{
+			if(enter_brake == 5)
+			{
+							canbuf[0] = 2;
+			Can_Send_Msg(canbuf,8);
+			}
 		}
 #endif
 	}

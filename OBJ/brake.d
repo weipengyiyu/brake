@@ -43,3 +43,4 @@
 ..\obj\brake.o: ..\HARDWARE\WDG\wdg.h
 ..\obj\brake.o: ..\HARDWARE\RTC\rtc.h
 ..\obj\brake.o: ..\USER\main.h
+..\obj\brake.o: ..\HARDWARE\STMFLASH\stmflash.h

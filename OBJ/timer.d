@@ -43,3 +43,4 @@
 ..\obj\timer.o: ..\HARDWARE\WDG\wdg.h
 ..\obj\timer.o: ..\HARDWARE\RTC\rtc.h
 ..\obj\timer.o: ..\USER\main.h
+..\obj\timer.o: ..\HARDWARE\STMFLASH\stmflash.h
