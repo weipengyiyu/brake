@@ -5,6 +5,7 @@ int main(void)
 	PeriphInit();																																	//设备初始化
 	
 	LED0 = 0;
+	USART_SendData(USART1, 'a');
 	while(1)
 	{
 		LED0 = 1;
