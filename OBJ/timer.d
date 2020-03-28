@@ -1,6 +1,8 @@
 ..\obj\timer.o: ..\HARDWARE\TIMER\timer.c
 ..\obj\timer.o: ..\USER\main.h
 ..\obj\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\timer.o: ..\HARDWARE\LED\led.h
 ..\obj\timer.o: ..\SYSTEM\sys\sys.h
 ..\obj\timer.o: ..\USER\stm32f10x.h
@@ -35,7 +37,6 @@
 ..\obj\timer.o: ..\SYSTEM\delay\delay.h
 ..\obj\timer.o: ..\HARDWARE\KEY\key.h
 ..\obj\timer.o: ..\HARDWARE\LCD\lcd.h
-..\obj\timer.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\timer.o: ..\SYSTEM\usart\usart.h
 ..\obj\timer.o: ..\HARDWARE\CAN\can.h
 ..\obj\timer.o: ..\HARDWARE\TIMER\timer.h

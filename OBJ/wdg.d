@@ -1,6 +1,8 @@
 ..\obj\wdg.o: ..\HARDWARE\WDG\wdg.c
 ..\obj\wdg.o: ..\USER\main.h
 ..\obj\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\wdg.o: ..\HARDWARE\LED\led.h
 ..\obj\wdg.o: ..\SYSTEM\sys\sys.h
 ..\obj\wdg.o: ..\USER\stm32f10x.h
@@ -35,7 +37,6 @@
 ..\obj\wdg.o: ..\SYSTEM\delay\delay.h
 ..\obj\wdg.o: ..\HARDWARE\KEY\key.h
 ..\obj\wdg.o: ..\HARDWARE\LCD\lcd.h
-..\obj\wdg.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\wdg.o: ..\SYSTEM\usart\usart.h
 ..\obj\wdg.o: ..\HARDWARE\CAN\can.h
 ..\obj\wdg.o: ..\HARDWARE\TIMER\timer.h

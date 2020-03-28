@@ -2,32 +2,24 @@
 
 
 //要写入到STM32 FLASH的字符串数组
-const u8 TEXT_Buffer[]={"l want the world!"};
+
 #define SIZE sizeof(TEXT_Buffer)		//数组长度
 #define FLASH_SAVE_ADDR  0X08070000		//设置FLASH 保存地址(必须为偶数，且其值要大于本代码所占用FLASH的大小+0X08000000)
 
 static int recv_cnt = 0;
 static int flag = 1;
 static int brake_flag = 1;								//没有发送急停
+static int record_flag = 0;								//记录标记位
 
 //STMFLASH_Write(FLASH_SAVE_ADDR,(u16*)TEXT_Buffer,SIZE);
 //STMFLASH_Read(FLASH_SAVE_ADDR,(u16*)datatemp,SIZE);
 
-//收到心跳 统计信息（暂时用于统计包数和打印）
+//收到心跳 统计信息（暂时用于统计包数和打印的标记位）
 void recv_heart(u8 *buf)
 {	
-
 	if(flag)
 	{
-		recv_cnt++;
-
-		//USART_SendData(USART1, USART_RX_BUF[7]);
-		
-		//printf(" %d-%d-%d-%d:%d:%d ", calendar.w_year, 	
-		//calendar.w_month, calendar.w_date, calendar.hour, calendar.min, calendar.sec);
-
-		printf(" cnt%d ", recv_cnt);
-
+		record_flag = 1;
 	}			
 }
 
@@ -96,3 +88,90 @@ void is_flag(void)
 {
 		flag = 1;
 }
+
+void record(void)
+{
+	u16 TEXT_Buffer[16] = {0};
+	u16 datatemp[16] = {0};
+	
+	if(record_flag != 0)
+	{
+		recv_cnt++;
+
+		TEXT_Buffer[0] = recv_cnt;
+		TEXT_Buffer[1] = ' ';
+		TEXT_Buffer[2] = calendar.w_year;
+		TEXT_Buffer[3] = '-';
+		TEXT_Buffer[4] = calendar.w_month;
+		TEXT_Buffer[5] = '-';
+		TEXT_Buffer[6] = calendar.w_date;
+		TEXT_Buffer[7] = '-';
+		TEXT_Buffer[8] = calendar.hour;
+		TEXT_Buffer[9] = ':';
+		TEXT_Buffer[10] = calendar.min;
+		TEXT_Buffer[11] = ':';
+		TEXT_Buffer[12] = calendar.sec;
+
+		STMFLASH_Write(FLASH_SAVE_ADDR,(u16*)TEXT_Buffer,SIZE);
+		STMFLASH_Read(FLASH_SAVE_ADDR,(u16*)datatemp,SIZE);
+
+		printf(" %d-%d-%d-%d:%d:%d ", datatemp[2], 	
+		datatemp[4], datatemp[6], datatemp[8], datatemp[10], datatemp[12]);
+
+		printf(" cnt%d ", datatemp[0]);
+		//printf(" cnt%d ", recv_cnt);
+	
+		record_flag = 0;
+	}
+	
+
+}
+
+
+
+
+#if 0
+char *reverse(char *s)
+{
+    char temp;
+    char *p = s;  
+    char *q = s;   
+    while(*q)
+        ++q;
+    q--;
+
+    while(q > p)
+    {
+        temp = *p;
+        *p++ = *q;
+        *q-- = temp;
+    }
+
+    return s;
+}
+
+
+char *my_itoa(int n)
+{
+    int i = 0,isNegative = 0;
+    static char s[100];   
+    if((isNegative = n) < 0) 
+    {
+        n = -n;
+    }
+
+    do 
+    {
+        s[i++] = n%10 + '0';
+        n = n/10;
+    }while(n > 0);
+
+    if(isNegative < 0)
+    {
+        s[i++] = '-';
+    }
+    s[i] = '\0';
+
+    return reverse(s);
+}
+#endif

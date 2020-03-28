@@ -1,6 +1,8 @@
 ..\obj\stmflash.o: ..\HARDWARE\STMFLASH\stmflash.c
 ..\obj\stmflash.o: ..\USER\main.h
 ..\obj\stmflash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\stmflash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\stmflash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\stmflash.o: ..\HARDWARE\LED\led.h
 ..\obj\stmflash.o: ..\SYSTEM\sys\sys.h
 ..\obj\stmflash.o: ..\USER\stm32f10x.h
@@ -35,7 +37,6 @@
 ..\obj\stmflash.o: ..\SYSTEM\delay\delay.h
 ..\obj\stmflash.o: ..\HARDWARE\KEY\key.h
 ..\obj\stmflash.o: ..\HARDWARE\LCD\lcd.h
-..\obj\stmflash.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\stmflash.o: ..\SYSTEM\usart\usart.h
 ..\obj\stmflash.o: ..\HARDWARE\CAN\can.h
 ..\obj\stmflash.o: ..\HARDWARE\TIMER\timer.h

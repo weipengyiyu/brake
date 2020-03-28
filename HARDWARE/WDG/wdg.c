@@ -47,6 +47,6 @@ void WWDG_IRQHandler(void)
 
 	WWDG_ClearFlag();	  //清除提前唤醒中断标志位
 
-	LED1=!LED1;		 //LED状态翻转
+	//LED1=!LED1;		 //LED状态翻转
 }
 

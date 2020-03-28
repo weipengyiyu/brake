@@ -3,12 +3,11 @@
 int main(void)
 {	
 	PeriphInit();																																	//设备初始化
+	start();
 	
-	LED0 = 0;
-	USART_SendData(USART1, 'a');
 	while(1)
 	{
-		LED0 = 1;
+		record();																																		//记录
 		key_brake();																																//按键1开启、0退出急停模式
 	}
 }
@@ -23,7 +22,21 @@ void PeriphInit(void)
 	//TIM1_Int_Init(4999,7199);																											//500ms
 	TIM1_Int_Init(19999,7199);																											//2000ms
 	CAN_Mode_Init(CAN_SJW_1tq, CAN_BS2_8tq, CAN_BS1_9tq, 4, CAN_Mode_Normal);			//CAN初始化正常模式,波特率500Kbps  
-	WWDG_Init(0x7f, 0x5f, WWDG_Prescaler_8);																			//提示系统正在运行	LED0 翻转
+	//WWDG_Init(0x7f, 0x5f, WWDG_Prescaler_8);																			//提示系统正在运行	LED0 翻转
 	RTC_Init();	  																																//RTC初始化
 }		
 
+void start(void)
+{
+	USART_SendData(USART1, 's');
+	delay_us(100);
+	USART_SendData(USART1, 't');
+	delay_us(100);
+	USART_SendData(USART1, 'a');
+	delay_us(100);
+	USART_SendData(USART1, 'r');
+	delay_us(100);
+	USART_SendData(USART1, 't');
+	delay_us(100);
+	USART_SendData(USART1, ' ');
+}

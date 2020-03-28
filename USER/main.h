@@ -2,6 +2,8 @@
 #define __MAIN_H__
 
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 #include "led.h"
 #include "delay.h"
 #include "key.h"
@@ -16,5 +18,6 @@
 #include "stmflash.h"
 
 void PeriphInit(void);
+void start(void);
 
 #endif

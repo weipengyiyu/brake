@@ -1,6 +1,8 @@
 ..\obj\rtc.o: ..\HARDWARE\RTC\rtc.c
 ..\obj\rtc.o: ..\USER\main.h
 ..\obj\rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\rtc.o: ..\HARDWARE\LED\led.h
 ..\obj\rtc.o: ..\SYSTEM\sys\sys.h
 ..\obj\rtc.o: ..\USER\stm32f10x.h
@@ -35,7 +37,6 @@
 ..\obj\rtc.o: ..\SYSTEM\delay\delay.h
 ..\obj\rtc.o: ..\HARDWARE\KEY\key.h
 ..\obj\rtc.o: ..\HARDWARE\LCD\lcd.h
-..\obj\rtc.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\rtc.o: ..\SYSTEM\usart\usart.h
 ..\obj\rtc.o: ..\HARDWARE\CAN\can.h
 ..\obj\rtc.o: ..\HARDWARE\TIMER\timer.h

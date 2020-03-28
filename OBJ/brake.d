@@ -1,6 +1,8 @@
 ..\obj\brake.o: brake.c
 ..\obj\brake.o: main.h
 ..\obj\brake.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\brake.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\brake.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\string.h
 ..\obj\brake.o: ..\HARDWARE\LED\led.h
 ..\obj\brake.o: ..\SYSTEM\sys\sys.h
 ..\obj\brake.o: ..\USER\stm32f10x.h
@@ -35,7 +37,6 @@
 ..\obj\brake.o: ..\SYSTEM\delay\delay.h
 ..\obj\brake.o: ..\HARDWARE\KEY\key.h
 ..\obj\brake.o: ..\HARDWARE\LCD\lcd.h
-..\obj\brake.o: C:\Keil_v5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\brake.o: ..\SYSTEM\usart\usart.h
 ..\obj\brake.o: ..\HARDWARE\CAN\can.h
 ..\obj\brake.o: ..\HARDWARE\TIMER\timer.h
