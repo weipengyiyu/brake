@@ -16,6 +16,7 @@
 #include "wdg.h"
 #include "rtc.h"
 #include "stmflash.h"
+#include "iwdg.h"
 
 void PeriphInit(void);
 void start(void);

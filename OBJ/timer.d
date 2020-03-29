@@ -45,3 +45,4 @@
 ..\obj\timer.o: ..\HARDWARE\RTC\rtc.h
 ..\obj\timer.o: ..\USER\main.h
 ..\obj\timer.o: ..\HARDWARE\STMFLASH\stmflash.h
+..\obj\timer.o: ..\HARDWARE\IWDG\iwdg.h

@@ -45,3 +45,4 @@
 ..\obj\rtc.o: ..\HARDWARE\RTC\rtc.h
 ..\obj\rtc.o: ..\USER\main.h
 ..\obj\rtc.o: ..\HARDWARE\STMFLASH\stmflash.h
+..\obj\rtc.o: ..\HARDWARE\IWDG\iwdg.h

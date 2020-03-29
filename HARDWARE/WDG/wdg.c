@@ -21,9 +21,9 @@ void WWDG_Init(u8 tr,u8 wr,u32 fprer)
 
 	WWDG_ClearFlag();//清除提前唤醒中断标志位 
 
-	WWDG_NVIC_Init();//初始化窗口看门狗 NVIC
+	//WWDG_NVIC_Init();//初始化窗口看门狗 NVIC
 
-	WWDG_EnableIT(); //开启窗口看门狗中断
+	//WWDG_EnableIT(); //开启窗口看门狗中断
 } 
 //重设置WWDG计数器的值
 void WWDG_Set_Counter(u8 cnt)

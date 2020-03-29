@@ -11,6 +11,7 @@
 "..\obj\wdg.o"
 "..\obj\rtc.o"
 "..\obj\stmflash.o"
+"..\obj\iwdg.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"
@@ -28,6 +29,7 @@
 "..\obj\stm32f10x_bkp.o"
 "..\obj\stm32f10x_pwr.o"
 "..\obj\stm32f10x_flash.o"
+"..\obj\stm32f10x_iwdg.o"
 --strict --scatter "..\OBJ\CAN.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
