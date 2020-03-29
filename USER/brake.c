@@ -1,8 +1,5 @@
 #include "main.h"
 
-
-//要写入到STM32 FLASH的字符串数组
-
 #define SIZE sizeof(TEXT_Buffer)		//数组长度
 #define FLASH_SAVE_ADDR  0X08070000		//设置FLASH 保存地址(必须为偶数，且其值要大于本代码所占用FLASH的大小+0X08000000)
 
@@ -11,8 +8,6 @@ static int flag = 1;
 static int brake_flag = 1;								//没有发送急停
 static int record_flag = 0;								//记录标记位
 
-//STMFLASH_Write(FLASH_SAVE_ADDR,(u16*)TEXT_Buffer,SIZE);
-//STMFLASH_Read(FLASH_SAVE_ADDR,(u16*)datatemp,SIZE);
 
 //收到心跳 统计信息（暂时用于统计包数和打印的标记位）
 void recv_heart(u8 *buf)
@@ -127,51 +122,3 @@ void record(void)
 
 }
 
-
-
-
-#if 0
-char *reverse(char *s)
-{
-    char temp;
-    char *p = s;  
-    char *q = s;   
-    while(*q)
-        ++q;
-    q--;
-
-    while(q > p)
-    {
-        temp = *p;
-        *p++ = *q;
-        *q-- = temp;
-    }
-
-    return s;
-}
-
-
-char *my_itoa(int n)
-{
-    int i = 0,isNegative = 0;
-    static char s[100];   
-    if((isNegative = n) < 0) 
-    {
-        n = -n;
-    }
-
-    do 
-    {
-        s[i++] = n%10 + '0';
-        n = n/10;
-    }while(n > 0);
-
-    if(isNegative < 0)
-    {
-        s[i++] = '-';
-    }
-    s[i] = '\0';
-
-    return reverse(s);
-}
-#endif

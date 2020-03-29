@@ -19,11 +19,9 @@ void PeriphInit(void)
 	uart_init(115200);	 																													//串口初始化为115200
 	LED_Init();		  																															//初始化与LED连接的硬件接口
 	KEY_Init();																																		//按键初始化
-	//TIM1_Int_Init(4999,7199);																											//500ms
-	TIM1_Int_Init(19999,7199);																											//2000ms
+	TIM1_Int_Init(19999,7199);																										//2000ms 提示系统正在运行	LED0 翻转
 	CAN_Mode_Init(CAN_SJW_1tq, CAN_BS2_8tq, CAN_BS1_9tq, 4, CAN_Mode_Normal);			//CAN初始化正常模式,波特率500Kbps  
-	//WWDG_Init(0x7f, 0x5f, WWDG_Prescaler_8);																			//提示系统正在运行	LED0 翻转
-	IWDG_Init(4, 1250);																															//2s
+	IWDG_Init(4, 1250);																														//2s
 	RTC_Init();	  																																//RTC初始化
 }		
 
