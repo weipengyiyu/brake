@@ -6,15 +6,44 @@
 static int recv_cnt = 0;
 static int flag = 1;
 static int brake_flag = 1;								//没有发送急停
-static int record_flag = 0;								//记录标记位
 
 
 //收到心跳 统计信息（暂时用于统计包数和打印的标记位）
 void recv_heart(u8 *buf)
 {	
+	u16 TEXT_Buffer[16] = {0};
+	u16 datatemp[16] = {0};
+	
 	if(flag)
 	{
-		record_flag = 1;
+		recv_cnt++;
+
+		TEXT_Buffer[0] = recv_cnt;
+		TEXT_Buffer[1] = calendar.w_year;
+		TEXT_Buffer[2] = calendar.w_month;
+		TEXT_Buffer[3] = calendar.w_date;
+		TEXT_Buffer[4] = calendar.hour;
+		TEXT_Buffer[5] = calendar.min;
+		TEXT_Buffer[6] = calendar.sec;
+		TEXT_Buffer[7] = buf[0];
+		TEXT_Buffer[8] = buf[1];
+		TEXT_Buffer[9] = buf[2];
+		TEXT_Buffer[10] = buf[3];
+		TEXT_Buffer[11] = buf[4];
+		TEXT_Buffer[12] = buf[5];
+		TEXT_Buffer[13] = buf[6];
+		TEXT_Buffer[14] = buf[7];
+		
+		STMFLASH_Write(FLASH_SAVE_ADDR,(u16*)TEXT_Buffer,SIZE);
+		STMFLASH_Read(FLASH_SAVE_ADDR,(u16*)datatemp,SIZE);
+
+		printf(" %d-%d-%d-%d:%d:%d ", datatemp[1], 	
+		datatemp[2], datatemp[3], datatemp[4], datatemp[5], datatemp[6]);
+
+		printf(" %x%x%x%x%x%x%x%x ", datatemp[7], datatemp[8], datatemp[9], datatemp[10],
+			datatemp[11], datatemp[12], datatemp[13], datatemp[14]);
+		
+		printf(" cnt%d ", datatemp[0]);
 	}			
 }
 
@@ -84,41 +113,4 @@ void is_flag(void)
 		flag = 1;
 }
 
-void record(void)
-{
-	u16 TEXT_Buffer[16] = {0};
-	u16 datatemp[16] = {0};
-	
-	if(record_flag != 0)
-	{
-		recv_cnt++;
-
-		TEXT_Buffer[0] = recv_cnt;
-		TEXT_Buffer[1] = ' ';
-		TEXT_Buffer[2] = calendar.w_year;
-		TEXT_Buffer[3] = '-';
-		TEXT_Buffer[4] = calendar.w_month;
-		TEXT_Buffer[5] = '-';
-		TEXT_Buffer[6] = calendar.w_date;
-		TEXT_Buffer[7] = '-';
-		TEXT_Buffer[8] = calendar.hour;
-		TEXT_Buffer[9] = ':';
-		TEXT_Buffer[10] = calendar.min;
-		TEXT_Buffer[11] = ':';
-		TEXT_Buffer[12] = calendar.sec;
-
-		STMFLASH_Write(FLASH_SAVE_ADDR,(u16*)TEXT_Buffer,SIZE);
-		STMFLASH_Read(FLASH_SAVE_ADDR,(u16*)datatemp,SIZE);
-
-		printf(" %d-%d-%d-%d:%d:%d ", datatemp[2], 	
-		datatemp[4], datatemp[6], datatemp[8], datatemp[10], datatemp[12]);
-
-		printf(" cnt%d ", datatemp[0]);
-		//printf(" cnt%d ", recv_cnt);
-	
-		record_flag = 0;
-	}
-	
-
-}
 

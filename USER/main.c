@@ -7,7 +7,6 @@ int main(void)
 	
 	while(1)
 	{
-		record();																																		//记录
 		key_brake();																																//按键1开启、0退出急停模式
 	}
 }
