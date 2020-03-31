@@ -1,8 +1,6 @@
 #include "main.h"
 
 static int enter_brake = 0;
-static int en_flag = 0;
-static int enter_flag = 0;
 
 void TIM1_Int_Init(u16 arr,u16 psc)
 {
@@ -43,29 +41,22 @@ void TIM1_UP_IRQHandler(void)
 		if(temp == 8)
 		{
 			enter_brake++;
-			if(enter_brake > 5)								//第一次正确收到5包数据以上，才能触发urgency
+			if(enter_brake > 5)								//正确收到5个心跳包，才正常触发
 			{
 				enter_brake=5;
-				brake();												//正常接收心跳包
 			}
 			
-			if(en_flag)												//进入了急停模式后，正确收到1包数据，才开始记录
+			if(enter_brake == 5)
 			{
-				if(enter_flag == 5)
-				{
-					en_flag = 0;
-					enter_flag = 0;
-					is_flag();
-				}
-				enter_flag++;
+				is_flag();
+				brake();												//正常接收心跳包,进入急停模式
+				recv_heart(canbuf);
 			}
-			
-			recv_heart(canbuf);
 		}
 		else if((temp != 8) && (enter_brake == 5))			
 		{	
-			en_flag = 1;
-			urgency_stop();
+			enter_brake = 0;
+			urgency_stop();													//发送急停命令
 		}
 
 #endif
