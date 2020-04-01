@@ -2,6 +2,7 @@
 
 int main(void)
 {	
+	SCB->VTOR = SRAM_BASE|0x1000;
 	PeriphInit();																																	//设备初始化
 	start();
 	
