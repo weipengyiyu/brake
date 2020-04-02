@@ -34,7 +34,7 @@ int main(void)
  
 
 	printf("ELITE STM32F103 ^_^\r\n");	
-	printf("input: key_up-copy key1-flash key0-sram\r\n");	
+	printf("update CAN.bin file\r\n");	
   
 	while(1)
 	{
@@ -47,6 +47,7 @@ int main(void)
 				USART_RX_CNT=0;
 				printf("用户程序接收完成!\r\n");
 				printf("代码长度:%dBytes\r\n",applenth);
+				printf("input: \r\nkey_up-copy \r\nkey1-flash \r\nkey0-sram\r\n");	
 			}else oldcount=USART_RX_CNT;			
 		}
 		t++;
