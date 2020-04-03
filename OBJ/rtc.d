@@ -46,3 +46,5 @@
 ..\obj\rtc.o: ..\USER\main.h
 ..\obj\rtc.o: ..\HARDWARE\STMFLASH\stmflash.h
 ..\obj\rtc.o: ..\HARDWARE\IWDG\iwdg.h
+..\obj\rtc.o: ..\HARDWARE\W25QXX\w25qxx.h
+..\obj\rtc.o: ..\HARDWARE\SPI\spi.h

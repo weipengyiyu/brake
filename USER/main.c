@@ -24,6 +24,7 @@ void PeriphInit(void)
 	CAN_Mode_Init(CAN_SJW_1tq, CAN_BS2_8tq, CAN_BS1_9tq, 4, CAN_Mode_Normal);			//CAN初始化正常模式,波特率500Kbps  
 	IWDG_Init(4, 1250);																														//2s
 	RTC_Init();	  																																//RTC初始化
+	W25QXX_Init();																																//初始化SPI FLASH的IO口
 }		
 
 void start(void)

@@ -46,3 +46,5 @@
 ..\obj\timer.o: ..\USER\main.h
 ..\obj\timer.o: ..\HARDWARE\STMFLASH\stmflash.h
 ..\obj\timer.o: ..\HARDWARE\IWDG\iwdg.h
+..\obj\timer.o: ..\HARDWARE\W25QXX\w25qxx.h
+..\obj\timer.o: ..\HARDWARE\SPI\spi.h

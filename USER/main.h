@@ -17,6 +17,8 @@
 #include "rtc.h"
 #include "stmflash.h"
 #include "iwdg.h"
+#include "w25qxx.h"
+#include "spi.h"
 
 void PeriphInit(void);
 void start(void);

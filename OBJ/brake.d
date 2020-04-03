@@ -46,3 +46,5 @@
 ..\obj\brake.o: ..\USER\main.h
 ..\obj\brake.o: ..\HARDWARE\STMFLASH\stmflash.h
 ..\obj\brake.o: ..\HARDWARE\IWDG\iwdg.h
+..\obj\brake.o: ..\HARDWARE\W25QXX\w25qxx.h
+..\obj\brake.o: ..\HARDWARE\SPI\spi.h
