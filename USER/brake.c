@@ -1,5 +1,12 @@
 #include "main.h"
 
+#define __LOG_MSG
+#ifdef  __LOG_MSG
+#define LOG_MSG(...) printf(__VA_ARGS__)
+#else
+#define LOG_MSG(...)
+#endif
+
 #define SIZE sizeof(TEXT_Buffer)		//数组长度
 //#define FLASH_SAVE_ADDR  0X08070000		//设置FLASH 保存地址(必须为偶数，且其值要大于本代码所占用FLASH的大小+0X08000000)
 #define SIZECHAR  19
@@ -37,23 +44,23 @@ void recv_heart(u8 *buf)
 		
 		W25QXX_Write((u8*)TEXT_Buffer,recv_cnt*SIZE,SIZECHAR);
 		W25QXX_Read((u8*)datatemp,recv_cnt*SIZE,SIZECHAR);
-		printf(" %d-%d-%d-%d:%d:%d ", datatemp[4]|(datatemp[5]<<8), 	
+		LOG_MSG(" %d-%d-%d-%d:%d:%d ", datatemp[4]|(datatemp[5]<<8), 	
 		datatemp[6], datatemp[7], datatemp[8], datatemp[9], datatemp[10]);
 
-		printf(" %x%x%x%x%x%x%x%x ", datatemp[11], datatemp[12], datatemp[13], datatemp[14],
+		LOG_MSG(" %x%x%x%x%x%x%x%x ", datatemp[11], datatemp[12], datatemp[13], datatemp[14],
 			datatemp[15], datatemp[16], datatemp[17], datatemp[18]);
 		
 		if(recv_cnt < 256)
 		{
-			printf(" cnt%d \r\n", datatemp[0]);
+			LOG_MSG(" cnt%d \r\n", datatemp[0]);
 		}
 		else if(recv_cnt < 65535)
 		{
-			printf(" cnt%d \r\n", datatemp[0]|(datatemp[1]<<8));
+			LOG_MSG(" cnt%d \r\n", datatemp[0]|(datatemp[1]<<8));
 		}
 		else
 		{
-			printf(" cnt%d \r\n", datatemp[0]|(datatemp[1]<<8)|(datatemp[2]<<16));
+			LOG_MSG(" cnt%d \r\n", datatemp[0]|(datatemp[1]<<8)|(datatemp[2]<<16));
 		}
 
 		recv_cnt++;
