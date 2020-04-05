@@ -1198,10 +1198,10 @@ Image component sizes
        480         38          0         20          0       1623   system_stm32f10x.o
        240         14          0          4          0       1051   timer.o
        320         18          0          6        200       3006   usart.o
-       872         30          0          2       4096       4205   w25qxx.o
+       872         30          0          2       4096       4197   w25qxx.o
 
     ----------------------------------------------------------------------
-     16012        702        360         76       5844     361612   Object Totals
+     16012        702        360         76       5844     361604   Object Totals
          0          0         32          0          0          0   (incl. Generated)
          4          0          0          5          2          0   (incl. Padding)
 
@@ -1262,8 +1262,8 @@ Image component sizes
 
       Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
 
-     16976        748        400         76       5940     359876   Grand Totals
-     16976        748        400         76       5940     359876   ELF Image Totals
+     16976        748        400         76       5940     359868   Grand Totals
+     16976        748        400         76       5940     359868   ELF Image Totals
      16976        748        400         76          0          0   ROM Totals
 
 ==============================================================================

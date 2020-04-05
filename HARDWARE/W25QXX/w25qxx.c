@@ -224,10 +224,10 @@ void W25QXX_Write(u8* pBuffer,u32 WriteAddr,u16 NumByteToWrite)
 //等待时间超长...
 void W25QXX_Erase_Chip(void)   
 {                                   
-    W25QXX_Write_Enable();                 	 	//SET WEL 
-    W25QXX_Wait_Busy();   
-  	W25QXX_CS=0;                            	//使能器件   
-    SPI2_ReadWriteByte(W25X_ChipErase);        	//发送片擦除命令  
+	W25QXX_Write_Enable();                 	 	//SET WEL 
+	W25QXX_Wait_Busy();   
+	W25QXX_CS=0;                            	//使能器件   
+	SPI2_ReadWriteByte(W25X_ChipErase);        	//发送片擦除命令  
 	W25QXX_CS=1;                            	//取消片选     	      
 	W25QXX_Wait_Busy();   				   		//等待芯片擦除结束
 }   

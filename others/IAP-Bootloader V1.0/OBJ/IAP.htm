@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\IAP.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\IAP.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Thu Apr 02 11:26:49 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sun Apr 05 14:04:07 2020
 <BR><P>
 <H3>Maximum Stack Usage =        124 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -120,20 +120,20 @@ Global Symbols
 <P><STRONG><a name="[8a]"></a>__rt_final_exit</STRONG> (Thumb, 0 bytes, Stack size unknown bytes, entry11a.o(.ARM.Collect$$$$0000000F))
 
 <P><STRONG><a name="[7e]"></a>MSR_MSP</STRONG> (Thumb, 6 bytes, Stack size 0 bytes, sys.o(.emb_text))
-<BR><BR>[Called By]<UL><LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_load_app
+<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_load_app
 </UL>
 
-<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 322 bytes, Stack size 0 bytes, main.o(.text))
+<P><STRONG><a name="[46]"></a>main</STRONG> (Thumb, 366 bytes, Stack size 0 bytes, main.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = main &rArr; iap_write_appbin &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; FLASH_ProgramHalfWord &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[4d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;uart_init
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_write_appbin
-<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_load_app
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_write_appbin
+<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_load_app
 <LI><a href="#[52]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
 <LI><a href="#[4e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_init
 <LI><a href="#[4c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;NVIC_PriorityGroupConfig
 <LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;LED_Init
-<LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
+<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
 <LI><a href="#[50]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Init
 <LI><a href="#[51]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
@@ -194,7 +194,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[53]"></a>KEY_Scan</STRONG> (Thumb, 150 bytes, Stack size 8 bytes, key.o(.text))
+<P><STRONG><a name="[54]"></a>KEY_Scan</STRONG> (Thumb, 150 bytes, Stack size 8 bytes, key.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = KEY_Scan
 </UL>
 <BR>[Calls]<UL><LI><a href="#[5b]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;GPIO_ReadInputDataBit
@@ -233,7 +233,7 @@ Global Symbols
 <LI><a href="#[5c]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write_NoCheck
 </UL>
 <BR>[Called By]<UL><LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Test_Write
-<LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_write_appbin
+<LI><a href="#[55]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;iap_write_appbin
 </UL>
 
 <P><STRONG><a name="[64]"></a>Test_Write</STRONG> (Thumb, 16 bytes, Stack size 16 bytes, stmflash.o(.text), UNUSED)
@@ -251,7 +251,7 @@ Global Symbols
 <P><STRONG><a name="[8c]"></a>delay_us</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, delay.o(.text), UNUSED)
 
 <P><STRONG><a name="[52]"></a>delay_ms</STRONG> (Thumb, 72 bytes, Stack size 0 bytes, delay.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
+<BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
 <LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
@@ -497,7 +497,7 @@ Global Symbols
 <P><STRONG><a name="[90]"></a>GPIO_StructInit</STRONG> (Thumb, 16 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
 
 <P><STRONG><a name="[5b]"></a>GPIO_ReadInputDataBit</STRONG> (Thumb, 18 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text))
-<BR><BR>[Called By]<UL><LI><a href="#[53]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
+<BR><BR>[Called By]<UL><LI><a href="#[54]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;KEY_Scan
 </UL>
 
 <P><STRONG><a name="[91]"></a>GPIO_ReadInputData</STRONG> (Thumb, 8 bytes, Stack size 0 bytes, stm32f10x_gpio.o(.text), UNUSED)
@@ -795,7 +795,7 @@ Global Symbols
 
 <P><STRONG><a name="[db]"></a>FLASH_GetStatus</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f10x_flash.o(.text), UNUSED)
 
-<P><STRONG><a name="[54]"></a>iap_write_appbin</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, iap.o(.text))
+<P><STRONG><a name="[55]"></a>iap_write_appbin</STRONG> (Thumb, 98 bytes, Stack size 40 bytes, iap.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 124<LI>Call Chain = iap_write_appbin &rArr; STMFLASH_Write &rArr; STMFLASH_Write_NoCheck &rArr; FLASH_ProgramHalfWord &rArr; FLASH_WaitForLastOperation
 </UL>
 <BR>[Calls]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;STMFLASH_Write
@@ -803,7 +803,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[46]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[55]"></a>iap_load_app</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, iap.o(.text))
+<P><STRONG><a name="[53]"></a>iap_load_app</STRONG> (Thumb, 36 bytes, Stack size 8 bytes, iap.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = iap_load_app
 </UL>
 <BR>[Calls]<UL><LI><a href="#[7e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;MSR_MSP
