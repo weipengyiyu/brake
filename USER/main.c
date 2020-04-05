@@ -5,7 +5,7 @@ int main(void)
 	//SCB->VTOR = SRAM_BASE|0x1000;								//0x20001000 0xC000 0x2000D000  0x3000
 	SCB->VTOR = FLASH_BASE|0x10000;								//0x8010000  0x70000
 	PeriphInit();																																	//设备初始化
-	start();
+	printf("\r\nbrake start!\r\n");
 	
 	while(1)
 	{
