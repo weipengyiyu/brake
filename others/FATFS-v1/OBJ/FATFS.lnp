@@ -26,6 +26,9 @@
 "..\obj\exfuns.o"
 "..\obj\cc936.o"
 "..\obj\fattester.o"
+"..\obj\usmart.o"
+"..\obj\usmart_config.o"
+"..\obj\usmart_str.o"
 --strict --scatter "..\OBJ\FATFS.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

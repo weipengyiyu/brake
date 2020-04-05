@@ -47,18 +47,8 @@
 	printf("ATOM@ALIENTEK\r\n");
 	printf("2020/4/1\r\n"); 
 
-#if 0	 
-	while(SD_Init())//检测不到SD卡
-	{
-		printf("SD Card Error!");
-		delay_ms(500);					
-		printf("Please Check! ");
-		delay_ms(500);
-		LED0=!LED0;//DS0闪烁
-	}
-#endif
  	exfuns_init();							//为fatfs相关变量申请内存				 
-  	f_mount(fs[0],"0:",1); 					//挂载SD卡 
+  f_mount(fs[0],"0:",1); 					//挂载SD卡 
  	res=f_mount(fs[1],"1:",1); 				//挂载FLASH.	
 	if(res==0X0D)//FLASH磁盘,FAT文件系统错误,重新格式化FLASH
 	{
@@ -82,17 +72,19 @@
 	    
  	printf("total%d\r\n",total);				//显示SD卡总容量 MB
  	printf("free%d\r\n",free);					//显示SD卡剩余容量 MB			
-	#if 0
+	
+	#if 1
 	f_open(&fil, "1:/msg.txt", FA_CREATE_ALWAYS|FA_WRITE);
 	f_write(&fil, "l want the world!\r\n", 30, &bw);
 	f_close(&fil);
 	
-		f_open(&fil, "1:/msg.txt", FA_READ);
+	f_open(&fil, "1:/msg.txt", FA_READ);
 	f_read(&fil, buf, 50, &bw);
 	f_close(&fil);
 	
 	printf(" %s\n ", buf);
 	#endif
+	
 	while(1)
 	{
 		delay_ms(200);		 			   
