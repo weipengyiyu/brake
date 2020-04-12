@@ -22,11 +22,18 @@ Dialog DLL:      TARMSTM.DLL V1.64.0.0
  
 <h2>Project:</h2>
 E:\stm32\stm32f103\实验44 USB读卡器实验\USER\USB_CARD_READER.uvprojx
-Project File Date:  04/01/2020
+Project File Date:  04/11/2020
 
 <h2>Output:</h2>
 Rebuild target 'USB_CARD_READER'
 compiling main.c...
+main.c(33): warning:  #177-D: variable "buf" was declared but never referenced
+        char buf[50];
+main.c(36): warning:  #177-D: variable "i" was declared but never referenced
+        u8 i=0;
+main.c(178): warning:  #177-D: variable "flag" was declared but never referenced
+         u8 flag = 0;
+main.c: 3 warnings, 0 errors
 compiling stm32f10x_it.c...
 compiling system_stm32f10x.c...
 compiling led.c...
@@ -74,9 +81,9 @@ compiling cc936.c...
 compiling exfuns.c...
 compiling fattester.c...
 linking...
-Program Size: Code=51072 RO-data=175996 RW-data=636 ZI-data=50328  
+Program Size: Code=51256 RO-data=175908 RW-data=636 ZI-data=11176  
 FromELF: creating hex file...
-"..\OBJ\USB_CARD_READER.axf" - 0 Error(s), 0 Warning(s).
+"..\OBJ\USB_CARD_READER.axf" - 0 Error(s), 3 Warning(s).
 
 <h2>Collection of Component include folders:</h2>
   E:\stm32\stm32f103\实验44 USB读卡器实验\USER\RTE

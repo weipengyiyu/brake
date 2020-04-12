@@ -1,16 +1,7 @@
 #include "main.h"
 
 extern u8 Max_Lun;
-void init(void)
-{
-	delay_init();	    	 //延时函数初始化	  
-  NVIC_PriorityGroupConfig(NVIC_PriorityGroup_2);//设置中断优先级分组为组2：2位抢占优先级，2位响应优先级
-	uart_init(115200);	 	//串口初始化为115200
-	LED_Init();		  			//初始化与LED连接的硬件接口
 
-	W25QXX_Init();				//初始化W25Q128
- 	my_mem_init(SRAMIN);		//初始化内部内存池
-}
 int main(void)
 {	
 	FIL fil;
@@ -18,11 +9,10 @@ int main(void)
 	//normal													 																						0x8000000  0x80000			0x20000000 0x10000
 	//SCB->VTOR = SRAM_BASE|0x1000;																								//0x20001000 0xC000 0x2000D000  0x3000
 	//SCB->VTOR = FLASH_BASE|0x10000;																							//0x8010000  0x70000			0x2000D000 0x3000
-	//PeriphInit();																																	//设备初始化
-	init();
+	PeriphInit();																																	//设备初始化
+	
 	printf("\r\n    brake start!   \r\n");
 	
-	init_usb();
 	init_fatfs();
 	
 	f_open(&fil, "1:/msg.txt", FA_CREATE_ALWAYS|FA_WRITE);
@@ -83,93 +73,3 @@ void init_fatfs(void)
  	printf("free%d\r\n",free);				
 }
 
-void init_usb(void)
-{
-	u8 USB_STA;
-	u8 Divece_STA; 
-	u8 offline_cnt=0;
-	u8 tct=0;
-	
-	if(SD_Init())
-	{
-		Max_Lun=0;											
-		printf("SD Card Error!");
-	}
-	else //SD
-	{   															  
-		printf("SD Card Size:     MB");
- 	  Mass_Memory_Size[1]=SDCardInfo.CardCapacity;		
-	  Mass_Block_Size[1] =512;							
-	  Mass_Block_Count[1]=Mass_Memory_Size[1]/Mass_Block_Size[1];
- 	}
-	if(W25QXX_TYPE!=W25Q128)printf("W25Q128 Error!");	
-	else //SPI FLASH 
-	{   															  
- 	  Mass_Memory_Size[0]=1024*1024*12;	
-	  Mass_Block_Size[0] =512;			
-	  Mass_Block_Count[0]=Mass_Memory_Size[0]/Mass_Block_Size[0];
-		printf("SPI FLASH Size:12MB");	 
-	} 
-	delay_ms(1800);
-	USB_Port_Set(0); 	
-	delay_ms(700);
-	USB_Port_Set(1);	
-	printf("USB Connecting...");	
-  Data_Buffer=mymalloc(SRAMIN,BULK_MAX_PACKET_SIZE*2*4);	
-	Bulk_Data_Buff=mymalloc(SRAMIN,BULK_MAX_PACKET_SIZE);	
- 	//USB??
- 	USB_Interrupts_Config();    
- 	Set_USBClock();   
- 	USB_Init();	    
-	delay_ms(1800);
-	while(1)
-	{	
-		delay_ms(1);				  
-		if(USB_STA!=USB_STATUS_REG)
-		{	 						   
-			
-			if(USB_STATUS_REG&0x01)
-			{
-				printf("USB Writing...");
-			}
-			if(USB_STATUS_REG&0x02)
-			{
-				printf("USB Reading...");
-			}	 										  
-			if(USB_STATUS_REG&0x04)printf("USB Write Err ");
- 
-			if(USB_STATUS_REG&0x08)printf("USB Read  Err ");
-  
-			USB_STA=USB_STATUS_REG;
-		}
-		
-		if(Divece_STA!=bDeviceState) 
-		{
-			if(bDeviceState==CONFIGURED)
-			{
-				printf("USB Connected    ");
-				break;
-			}
-			else printf("USB DisConnected ");
-			Divece_STA=bDeviceState;
-		}
-		
-		tct++;
-		if(tct==200)
-		{
-			tct=0;
-			LED0=!LED0;
-			if(USB_STATUS_REG&0x10)
-			{
-				offline_cnt=0;
-				bDeviceState=CONFIGURED;
-			}
-			else
-			{
-				offline_cnt++;  
-				if(offline_cnt>10)bDeviceState=UNCONNECTED;
-			}
-			USB_STATUS_REG=0;
-		}
-	}
-}
