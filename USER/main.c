@@ -1,25 +1,11 @@
 #include "main.h"
 
-extern u8 Max_Lun;
-
 int main(void)
 {	
-	FIL fil;
-	UINT bw;
 	//normal													 																						0x8000000  0x80000			0x20000000 0x10000
 	//SCB->VTOR = SRAM_BASE|0x1000;																								//0x20001000 0xC000 0x2000D000  0x3000
-	//SCB->VTOR = FLASH_BASE|0x10000;																							//0x8010000  0x70000			0x2000D000 0x3000
+	SCB->VTOR = FLASH_BASE|0x10000;																							//0x8010000  0x70000			0x2000D000 0x3000
 	PeriphInit();																																	//设备初始化
-	
-	printf("\r\n    brake start!   \r\n");
-	
-	init_fatfs();
-	
-	f_open(&fil, "1:/msg.txt", FA_CREATE_ALWAYS|FA_WRITE);
-	f_write(&fil, "l want the world", 16, &bw);
-	f_write(&fil, "hello world", 11, &bw);
-	f_write(&fil, "l want the world", 16, &bw);
-	f_close(&fil);
 	
 	while(1)
 	{
@@ -36,12 +22,15 @@ void PeriphInit(void)
 	KEY_Init();																																		//按键初始化
 	TIM1_Int_Init(19999,7199);																										//2000ms 提示系统正在运行	LED0 翻转
 	CAN_Mode_Init(CAN_SJW_1tq, CAN_BS2_8tq, CAN_BS1_9tq, 4, CAN_Mode_Normal);			//CAN初始化正常模式,波特率500Kbps  
-	IWDG_Init(4, 1250);																														//2s
+	IWDG_Init(4, 1250);																														//独立看门狗2s
 	RTC_Init();	  																																//RTC初始化
 	W25QXX_Init();																																//初始化SPI FLASH的IO口
 	my_mem_init(SRAMIN);																													//初始化内部内存池
+	printf("\r\n    brake start!   \r\n");
+	//init_fatfs();																																	//文件系统初始化
 }		
 
+#if 0
 void init_fatfs(void)
 {
  	u32 total,free;
@@ -69,7 +58,7 @@ void init_fatfs(void)
 		delay_ms(200);
 		LED0=!LED0;
 	}
- 	printf("total%d\r\n",total);				
- 	printf("free%d\r\n",free);				
+ 	printf("flash total%d\r\n",total);				
+ 	printf("flash free %d\r\n",free);				
 }
-
+#endif

@@ -22,15 +22,8 @@
 #include "malloc.h" 
 #include "sdio_sdcard.h"
 
-#include "ff.h"  
-#include "exfuns.h" 
-
-#include "mass_mal.h"
-#include "usb_lib.h"
-#include "hw_config.h"
-#include "usb_pwr.h"
-#include "memory.h"	    
-#include "usb_bot.h"  
+//#include "ff.h"  
+//#include "exfuns.h"  
 
 void PeriphInit(void);
 void init_fatfs(void);

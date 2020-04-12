@@ -91,7 +91,7 @@ int main(void)
 					printf("Input: \r\nkey1-Start flash \r\n");	
 				}else 
 				{  
-					printf("Flash err!\r\n");
+					printf("Flash Update err!\r\n");
 				}
  			}								 
 		} 
@@ -104,7 +104,7 @@ int main(void)
 				iap_load_app(FLASH_APP1_ADDR);//Ö´ÐÐFLASH APP´úÂë
 			}else 
 			{
-				printf("Flash err!\r\n");	   
+				printf("Flash Execute err!\r\n");	   
 			}									   
 		}
 //		if(key==KEY0_PRES)

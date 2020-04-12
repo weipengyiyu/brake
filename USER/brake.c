@@ -7,18 +7,21 @@
 #define LOG_MSG(...)
 #endif
 
-#define SIZE sizeof(TEXT_Buffer)		//数组长度
-//#define FLASH_SAVE_ADDR  0X08070000		//设置FLASH 保存地址(必须为偶数，且其值要大于本代码所占用FLASH的大小+0X08000000)
+#define SIZE sizeof(TEXT_Buffer)												//数组长度
+//#define FLASH_SAVE_ADDR  0X08070000										//设置FLASH 保存地址(必须为偶数，且其值要大于本代码所占用FLASH的大小+0X08000000)
 #define SIZECHAR  19
 static long int recv_cnt = 0;
 static int flag = 1;
-static int brake_flag = 1;								//没有发送急停
+static int brake_flag = 1;															//没有发送急停
 
 //收到心跳 统计信息（暂时用于统计包数和打印的标记位）
 void recv_heart(u8 *buf)
 {	
+//	FIL fil;
+//	UINT bw;
 	u8 TEXT_Buffer[20] = {0};
 	u8 datatemp[20] = {0};
+	
 	
 	if(flag)
 	{
@@ -41,7 +44,7 @@ void recv_heart(u8 *buf)
 		TEXT_Buffer[16] = buf[5];
 		TEXT_Buffer[17] = buf[6];
 		TEXT_Buffer[18] = buf[7];
-		
+	
 		W25QXX_Write((u8*)TEXT_Buffer,recv_cnt*SIZE,SIZECHAR);
 		W25QXX_Read((u8*)datatemp,recv_cnt*SIZE,SIZECHAR);
 		LOG_MSG(" %d-%d-%d-%d:%d:%d ", datatemp[4]|(datatemp[5]<<8), 	
@@ -64,7 +67,8 @@ void recv_heart(u8 *buf)
 		}
 
 		recv_cnt++;
-	}			
+	}
+
 }
 
 void urgency_stop(void)

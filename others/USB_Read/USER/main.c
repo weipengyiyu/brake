@@ -28,10 +28,8 @@ extern u8 Max_Lun;
 
 void init_fatfs(void)
 {
-	char buf[50];
  	u32 total,free;
 	u8 res=0;
-	u8 i=0;
 	
 	exfuns_init();							//?fatfs????????				 
 	f_mount(fs[0],"0:",1); 					//??SD? 
@@ -167,30 +165,16 @@ void usb_stat(void)
 	}
 }
 
- int main(void)
- {	 
-
-
-	 FIL fil;
-	 UINT bw;
-	 u8 flag = 0;
-		    
-	 
-	 
+int main(void)
+{	
+	//normal													 																						0x8000000  0x80000			0x20000000 0x10000
+	//SCB->VTOR = SRAM_BASE|0x1000;																								//0x20001000 0xC000 0x2000D000  0x3000
+	SCB->VTOR = FLASH_BASE|0x10000;																							//0x8010000  0x70000			0x2000D000 0x3000
 	init();
-   printf("ELITE STM32F103 ^_^");	
-	
-
+  printf("ELITE STM32F103 ^_^");	
 
 	init_usb();
-	  usb_stat();
-	init_fatfs();
-	
-	f_open(&fil, "1:/msg.txt", FA_CREATE_ALWAYS|FA_WRITE);
-	 f_write(&fil, "l want the world", 16, &bw);
-	 f_write(&fil, "hello world", 11, &bw);
-	 f_write(&fil, "l want the world", 16, &bw);
-	 f_close(&fil);
+	usb_stat();
 	 
 	while(1)
 	{	
@@ -199,7 +183,6 @@ void usb_stat(void)
 		printf(" normal ");
 		LED1=!LED1;
 	}
-
 }
 
 
