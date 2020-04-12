@@ -1,6 +1,6 @@
 Dependencies for Project 'CAN', Target 'CAN': (DO NOT MODIFY !)
-F (.\main.c)(0x5E929FC1)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
-I (main.h)(0x5E92A15F)
+F (.\main.c)(0x5E92A669)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+I (main.h)(0x5E92A499)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -43,17 +43,33 @@ I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
 I (brake.h)(0x5E8171B0)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
-I (..\USER\main.h)(0x5E92A15F)
+I (..\USER\main.h)(0x5E92A499)
 I (..\HARDWARE\STMFLASH\stmflash.h)(0x5056EB30)
 I (..\HARDWARE\IWDG\iwdg.h)(0x5E8062BD)
 I (..\HARDWARE\W25QXX\w25qxx.h)(0x55027E1F)
 I (..\HARDWARE\SPI\spi.h)(0x50559286)
+I (..\MALLOC\malloc.h)(0x5E92A3B2)
+I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
 I (..\FATFS\src\ff.h)(0x54F2F5B9)
 I (..\FATFS\src\integer.h)(0x54D8A8D8)
 I (..\FATFS\src\ffconf.h)(0x54F2F338)
 I (..\FATFS\exfuns\exfuns.h)(0x54FA7D9B)
-I (..\MALLOC\malloc.h)(0x5E92A3B2)
-I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
+I (..\USB\CONFIG\mass_mal.h)(0x54CA1577)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x50FD8893)
+I (..\USB\CONFIG\hw_config.h)(0x54CA28FB)
+I (..\USB\CONFIG\platform_config.h)(0x54C86880)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_conf.h)(0x50FD8881)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_pwr.h)(0x50FD8881)
+I (..\USB\CONFIG\memory.h)(0x54CA3973)
+I (..\USB\CONFIG\usb_bot.h)(0x50FD8881)
 F (.\stm32f10x_it.c)(0x4EBEACB0)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stm32f10x_it.o --omf_browse ..\obj\stm32f10x_it.crf --depend ..\obj\stm32f10x_it.d)
 I (stm32f10x_it.h)(0x4D99A426)
 I (stm32f10x.h)(0x4D783CB4)
@@ -116,7 +132,7 @@ I (..\STM32F10x_FWLib\inc\stm32f10x_usart.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\stm32f10x_wwdg.h)(0x4D783BB4)
 I (..\STM32F10x_FWLib\inc\misc.h)(0x4D783BB4)
 F (.\brake.c)(0x5E918576)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\brake.o --omf_browse ..\obj\brake.crf --depend ..\obj\brake.d)
-I (main.h)(0x5E92A15F)
+I (main.h)(0x5E92A499)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -159,17 +175,33 @@ I (..\HARDWARE\TIMER\timer.h)(0x5E740319)
 I (brake.h)(0x5E8171B0)
 I (..\HARDWARE\WDG\wdg.h)(0x5E7AB092)
 I (..\HARDWARE\RTC\rtc.h)(0x5E7AC0E1)
-I (..\USER\main.h)(0x5E92A15F)
+I (..\USER\main.h)(0x5E92A499)
 I (..\HARDWARE\STMFLASH\stmflash.h)(0x5056EB30)
 I (..\HARDWARE\IWDG\iwdg.h)(0x5E8062BD)
 I (..\HARDWARE\W25QXX\w25qxx.h)(0x55027E1F)
 I (..\HARDWARE\SPI\spi.h)(0x50559286)
+I (..\MALLOC\malloc.h)(0x5E92A3B2)
+I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
 I (..\FATFS\src\ff.h)(0x54F2F5B9)
 I (..\FATFS\src\integer.h)(0x54D8A8D8)
 I (..\FATFS\src\ffconf.h)(0x54F2F338)
 I (..\FATFS\exfuns\exfuns.h)(0x54FA7D9B)
-I (..\MALLOC\malloc.h)(0x5E92A3B2)
-I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
+I (..\USB\CONFIG\mass_mal.h)(0x54CA1577)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x50FD8893)
+I (..\USB\CONFIG\hw_config.h)(0x54CA28FB)
+I (..\USB\CONFIG\platform_config.h)(0x54C86880)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_conf.h)(0x50FD8881)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_pwr.h)(0x50FD8881)
+I (..\USB\CONFIG\memory.h)(0x54CA3973)
+I (..\USB\CONFIG\usb_bot.h)(0x50FD8881)
 F (..\HARDWARE\LED\led.c)(0x55102267)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\led.o --omf_browse ..\obj\led.crf --depend ..\obj\led.d)
 I (..\HARDWARE\LED\led.h)(0x5510227D)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
@@ -269,7 +301,7 @@ I (..\SYSTEM\delay\delay.h)(0x555AC82B)
 I (..\SYSTEM\usart\usart.h)(0x50517A82)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 F (..\HARDWARE\TIMER\timer.c)(0x5E831582)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\timer.o --omf_browse ..\obj\timer.crf --depend ..\obj\timer.d)
-I (..\USER\main.h)(0x5E92A15F)
+I (..\USER\main.h)(0x5E92A499)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -316,14 +348,30 @@ I (..\HARDWARE\STMFLASH\stmflash.h)(0x5056EB30)
 I (..\HARDWARE\IWDG\iwdg.h)(0x5E8062BD)
 I (..\HARDWARE\W25QXX\w25qxx.h)(0x55027E1F)
 I (..\HARDWARE\SPI\spi.h)(0x50559286)
+I (..\MALLOC\malloc.h)(0x5E92A3B2)
+I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
 I (..\FATFS\src\ff.h)(0x54F2F5B9)
 I (..\FATFS\src\integer.h)(0x54D8A8D8)
 I (..\FATFS\src\ffconf.h)(0x54F2F338)
 I (..\FATFS\exfuns\exfuns.h)(0x54FA7D9B)
-I (..\MALLOC\malloc.h)(0x5E92A3B2)
-I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
+I (..\USB\CONFIG\mass_mal.h)(0x54CA1577)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x50FD8893)
+I (..\USB\CONFIG\hw_config.h)(0x54CA28FB)
+I (..\USB\CONFIG\platform_config.h)(0x54C86880)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_conf.h)(0x50FD8881)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_pwr.h)(0x50FD8881)
+I (..\USB\CONFIG\memory.h)(0x54CA3973)
+I (..\USB\CONFIG\usb_bot.h)(0x50FD8881)
 F (..\HARDWARE\RTC\rtc.c)(0x5E7AC601)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\rtc.o --omf_browse ..\obj\rtc.crf --depend ..\obj\rtc.d)
-I (..\USER\main.h)(0x5E92A15F)
+I (..\USER\main.h)(0x5E92A499)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -370,14 +418,30 @@ I (..\HARDWARE\STMFLASH\stmflash.h)(0x5056EB30)
 I (..\HARDWARE\IWDG\iwdg.h)(0x5E8062BD)
 I (..\HARDWARE\W25QXX\w25qxx.h)(0x55027E1F)
 I (..\HARDWARE\SPI\spi.h)(0x50559286)
+I (..\MALLOC\malloc.h)(0x5E92A3B2)
+I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
 I (..\FATFS\src\ff.h)(0x54F2F5B9)
 I (..\FATFS\src\integer.h)(0x54D8A8D8)
 I (..\FATFS\src\ffconf.h)(0x54F2F338)
 I (..\FATFS\exfuns\exfuns.h)(0x54FA7D9B)
-I (..\MALLOC\malloc.h)(0x5E92A3B2)
-I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
+I (..\USB\CONFIG\mass_mal.h)(0x54CA1577)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x50FD8893)
+I (..\USB\CONFIG\hw_config.h)(0x54CA28FB)
+I (..\USB\CONFIG\platform_config.h)(0x54C86880)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_conf.h)(0x50FD8881)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_pwr.h)(0x50FD8881)
+I (..\USB\CONFIG\memory.h)(0x54CA3973)
+I (..\USB\CONFIG\usb_bot.h)(0x50FD8881)
 F (..\HARDWARE\STMFLASH\stmflash.c)(0x5E803B66)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\stmflash.o --omf_browse ..\obj\stmflash.crf --depend ..\obj\stmflash.d)
-I (..\USER\main.h)(0x5E92A15F)
+I (..\USER\main.h)(0x5E92A499)
 I (C:\Keil_v5\ARM\ARMCC\include\stdio.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\stdlib.h)(0x5475F300)
 I (C:\Keil_v5\ARM\ARMCC\include\string.h)(0x5475F300)
@@ -424,12 +488,28 @@ I (..\HARDWARE\STMFLASH\stmflash.h)(0x5056EB30)
 I (..\HARDWARE\IWDG\iwdg.h)(0x5E8062BD)
 I (..\HARDWARE\W25QXX\w25qxx.h)(0x55027E1F)
 I (..\HARDWARE\SPI\spi.h)(0x50559286)
+I (..\MALLOC\malloc.h)(0x5E92A3B2)
+I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
 I (..\FATFS\src\ff.h)(0x54F2F5B9)
 I (..\FATFS\src\integer.h)(0x54D8A8D8)
 I (..\FATFS\src\ffconf.h)(0x54F2F338)
 I (..\FATFS\exfuns\exfuns.h)(0x54FA7D9B)
-I (..\MALLOC\malloc.h)(0x5E92A3B2)
-I (..\HARDWARE\SDIO\sdio_sdcard.h)(0x55BB1C68)
+I (..\USB\CONFIG\mass_mal.h)(0x54CA1577)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_lib.h)(0x50FD8893)
+I (..\USB\CONFIG\hw_config.h)(0x54CA28FB)
+I (..\USB\CONFIG\platform_config.h)(0x54C86880)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_type.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_conf.h)(0x50FD8881)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_regs.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_def.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_core.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_init.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_sil.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_mem.h)(0x50FD8893)
+I (..\USB\STM32_USB-FS-Device_Driver\inc\usb_int.h)(0x50FD8893)
+I (..\USB\CONFIG\usb_pwr.h)(0x50FD8881)
+I (..\USB\CONFIG\memory.h)(0x54CA3973)
+I (..\USB\CONFIG\usb_bot.h)(0x50FD8881)
 F (..\HARDWARE\IWDG\iwdg.c)(0x5E805FEC)(-c --cpu Cortex-M3 -g -O0 --apcs=interwork -I..\HARDWARE\LED -I..\SYSTEM\delay -I..\SYSTEM\sys -I..\SYSTEM\usart -I..\USER -I..\STM32F10x_FWLib\inc -I..\CORE -I..\HARDWARE\KEY -I..\HARDWARE\LCD -I..\HARDWARE\RTC -I..\HARDWARE\RTC -I..\HARDWARE\WKUP -I..\HARDWARE\ADC -I..\HARDWARE\DAC -I..\HARDWARE\DMA -I..\HARDWARE\IIC -I..\HARDWARE\24CXX -I..\HARDWARE\SPI -I..\HARDWARE\FLASH -I..\HARDWARE\TOUCH -I..\HARDWARE\RS485 -I..\HARDWARE\CAN -I..\HARDWARE\TIMER -I..\HARDWARE\WDG -I..\HARDWARE\RTC -I..\HARDWARE\STMFLASH -I..\HARDWARE\IWDG -I..\HARDWARE\SPI -I..\HARDWARE\W25QXX -I..\MALLOC -I..\HARDWARE\SDIO -I..\FATFS\exfuns -I..\FATFS\src -I..\USB\CONFIG -I..\USB\STM32_USB-FS-Device_Driver\inc -I..\FATFS-I E:\mygithub\brake\USER\RTE-I C:\Keil_v5\ARM\PACK\Keil\STM32F1xx_DFP\1.0.5\Device\Include-I C:\Keil_v5\ARM\CMSIS\Include-D__UVISION_VERSION="514" -DSTM32F10X_HD -DSTM32F10X_HD -DUSE_STDPERIPH_DRIVER-o ..\obj\iwdg.o --omf_browse ..\obj\iwdg.crf --depend ..\obj\iwdg.d)
 I (..\HARDWARE\IWDG\iwdg.h)(0x5E8062BD)
 I (..\SYSTEM\sys\sys.h)(0x550F951B)
