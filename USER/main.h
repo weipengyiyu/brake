@@ -33,5 +33,8 @@
 #include "usb_bot.h"  
 
 void PeriphInit(void);
+void init_fatfs(void);
+void init_usb(void);
+
 
 #endif
