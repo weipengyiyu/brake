@@ -48,3 +48,8 @@
 ..\obj\brake.o: ..\HARDWARE\IWDG\iwdg.h
 ..\obj\brake.o: ..\HARDWARE\W25QXX\w25qxx.h
 ..\obj\brake.o: ..\HARDWARE\SPI\spi.h
+..\obj\brake.o: ..\FATFS\src\ff.h
+..\obj\brake.o: ..\FATFS\src\integer.h
+..\obj\brake.o: ..\FATFS\src\ffconf.h
+..\obj\brake.o: ..\FATFS\exfuns\exfuns.h
+..\obj\brake.o: ..\MALLOC\malloc.h

@@ -2,10 +2,11 @@
 
 int main(void)
 {	
-	//SCB->VTOR = SRAM_BASE|0x1000;								//0x20001000 0xC000 0x2000D000  0x3000
-	SCB->VTOR = FLASH_BASE|0x10000;								//0x8010000  0x70000
+	//normal													 																						0x8000000  0x80000			0x20000000 0x10000
+	//SCB->VTOR = SRAM_BASE|0x1000;																								//0x20001000 0xC000 0x2000D000  0x3000
+	//SCB->VTOR = FLASH_BASE|0x10000;																							//0x8010000  0x70000			0x2000D000 0x3000
 	PeriphInit();																																	//设备初始化
-	printf("\r\nbrake start!\r\n");
+	printf("\r\n    brake start!   \r\n");
 	
 	while(1)
 	{
@@ -25,19 +26,6 @@ void PeriphInit(void)
 	IWDG_Init(4, 1250);																														//2s
 	RTC_Init();	  																																//RTC初始化
 	W25QXX_Init();																																//初始化SPI FLASH的IO口
+	my_mem_init(SRAMIN);																													//初始化内部内存池
 }		
 
-void start(void)
-{
-	USART_SendData(USART1, 's');
-	delay_us(100);
-	USART_SendData(USART1, 't');
-	delay_us(100);
-	USART_SendData(USART1, 'a');
-	delay_us(100);
-	USART_SendData(USART1, 'r');
-	delay_us(100);
-	USART_SendData(USART1, 't');
-	delay_us(100);
-	USART_SendData(USART1, ' ');
-}

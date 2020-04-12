@@ -48,3 +48,8 @@
 ..\obj\rtc.o: ..\HARDWARE\IWDG\iwdg.h
 ..\obj\rtc.o: ..\HARDWARE\W25QXX\w25qxx.h
 ..\obj\rtc.o: ..\HARDWARE\SPI\spi.h
+..\obj\rtc.o: ..\FATFS\src\ff.h
+..\obj\rtc.o: ..\FATFS\src\integer.h
+..\obj\rtc.o: ..\FATFS\src\ffconf.h
+..\obj\rtc.o: ..\FATFS\exfuns\exfuns.h
+..\obj\rtc.o: ..\MALLOC\malloc.h

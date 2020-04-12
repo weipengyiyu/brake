@@ -19,8 +19,10 @@
 #include "iwdg.h"
 #include "w25qxx.h"
 #include "spi.h"
+#include "ff.h"  
+#include "exfuns.h"  
+#include "malloc.h" 
 
 void PeriphInit(void);
-void start(void);
 
 #endif

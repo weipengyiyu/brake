@@ -48,3 +48,8 @@
 ..\obj\stmflash.o: ..\HARDWARE\IWDG\iwdg.h
 ..\obj\stmflash.o: ..\HARDWARE\W25QXX\w25qxx.h
 ..\obj\stmflash.o: ..\HARDWARE\SPI\spi.h
+..\obj\stmflash.o: ..\FATFS\src\ff.h
+..\obj\stmflash.o: ..\FATFS\src\integer.h
+..\obj\stmflash.o: ..\FATFS\src\ffconf.h
+..\obj\stmflash.o: ..\FATFS\exfuns\exfuns.h
+..\obj\stmflash.o: ..\MALLOC\malloc.h

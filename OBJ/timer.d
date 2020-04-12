@@ -48,3 +48,8 @@
 ..\obj\timer.o: ..\HARDWARE\IWDG\iwdg.h
 ..\obj\timer.o: ..\HARDWARE\W25QXX\w25qxx.h
 ..\obj\timer.o: ..\HARDWARE\SPI\spi.h
+..\obj\timer.o: ..\FATFS\src\ff.h
+..\obj\timer.o: ..\FATFS\src\integer.h
+..\obj\timer.o: ..\FATFS\src\ffconf.h
+..\obj\timer.o: ..\FATFS\exfuns\exfuns.h
+..\obj\timer.o: ..\MALLOC\malloc.h
