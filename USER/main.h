@@ -22,6 +22,7 @@
 #include "ff.h"  
 #include "exfuns.h"  
 #include "malloc.h" 
+#include "sdio_sdcard.h"
 
 void PeriphInit(void);
 

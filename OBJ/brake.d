@@ -53,3 +53,4 @@
 ..\obj\brake.o: ..\FATFS\src\ffconf.h
 ..\obj\brake.o: ..\FATFS\exfuns\exfuns.h
 ..\obj\brake.o: ..\MALLOC\malloc.h
+..\obj\brake.o: ..\HARDWARE\SDIO\sdio_sdcard.h

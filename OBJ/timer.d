@@ -53,3 +53,4 @@
 ..\obj\timer.o: ..\FATFS\src\ffconf.h
 ..\obj\timer.o: ..\FATFS\exfuns\exfuns.h
 ..\obj\timer.o: ..\MALLOC\malloc.h
+..\obj\timer.o: ..\HARDWARE\SDIO\sdio_sdcard.h

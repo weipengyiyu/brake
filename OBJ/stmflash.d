@@ -53,3 +53,4 @@
 ..\obj\stmflash.o: ..\FATFS\src\ffconf.h
 ..\obj\stmflash.o: ..\FATFS\exfuns\exfuns.h
 ..\obj\stmflash.o: ..\MALLOC\malloc.h
+..\obj\stmflash.o: ..\HARDWARE\SDIO\sdio_sdcard.h

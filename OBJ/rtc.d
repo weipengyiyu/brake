@@ -53,3 +53,4 @@
 ..\obj\rtc.o: ..\FATFS\src\ffconf.h
 ..\obj\rtc.o: ..\FATFS\exfuns\exfuns.h
 ..\obj\rtc.o: ..\MALLOC\malloc.h
+..\obj\rtc.o: ..\HARDWARE\SDIO\sdio_sdcard.h
