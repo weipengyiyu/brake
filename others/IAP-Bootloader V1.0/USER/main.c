@@ -75,24 +75,24 @@ int main(void)
  				if(((*(vu32*)(0X20001000+4))&0xFF000000)==0x08000000)//判断是否为0X08XXXXXX.
 				{	 
 					iap_write_appbin(FLASH_APP1_ADDR,USART_RX_BUF,applenth);//更新FLASH代码   
-					printf("Update success!\r\n");	
-					printf("Input: \r\nkey1-Start flash \r\n");	
+					printf("Update success \r\n");	
+					printf("Input: \r\nkey0-Start flash \r\n");	
 				}else 
 				{  
-					printf("Flash Update err!\r\n");
+					printf("Flash Update err \r\n");
 				}
  			}								 
 		} 
 		if(key==KEY0_PRES)
 		{
 			delay_ms(500);
-			printf("Execute flash!\r\n");
+			printf("Execute flash \r\n");
 			if(((*(vu32*)(FLASH_APP1_ADDR+4))&0xFF000000)==0x08000000)//判断是否为0X08XXXXXX.
 			{	 
 				iap_load_app(FLASH_APP1_ADDR);//执行FLASH APP代码
 			}else 
 			{
-				printf("Flash Execute err!\r\n");	   
+				printf("Flash Execute err \r\n");	   
 			}									   
 		}			    
 	}   	   
