@@ -6,18 +6,6 @@
 #include "usart.h"
 #include "stmflash.h"
 #include "iap.h"
- 
- 
-/************************************************
- ALIENTEK精英STM32开发板实验42
- IAP实验 Bootloader V1.0 代码 
- 技术支持：www.openedv.com
- 淘宝店铺：http://eboard.taobao.com 
- 关注微信公众平台微信号："正点原子"，免费获取STM32资料。
- 广州市星翼电子科技有限公司  
- 作者：正点原子 @ALIENTEK
-************************************************/
-
 
 int main(void)
 {		
@@ -95,7 +83,7 @@ int main(void)
 				}
  			}								 
 		} 
-		if(key==KEY1_PRES)
+		if(key==KEY0_PRES)
 		{
 			delay_ms(500);
 			printf("Execute flash!\r\n");
@@ -106,19 +94,7 @@ int main(void)
 			{
 				printf("Flash Execute err!\r\n");	   
 			}									   
-		}
-//		if(key==KEY0_PRES)
-//		{
-//			delay_ms(500);
-//			printf("execute sram!\r\n");
-//			if(((*(vu32*)(0X20001000+4))&0xFF000000)==0x20000000)//判断是否为0X20XXXXXX.
-//			{	 
-//				iap_load_app(0X20001000);//SRAM地址
-//			}else 
-//			{
-//				printf("sram err!\r\n");   
-//			}									 	 
-//		}				    
+		}			    
 	}   	   
 }
 
