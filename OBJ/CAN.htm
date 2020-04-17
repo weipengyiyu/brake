@@ -3,9 +3,9 @@
 <title>Static Call Graph - [..\OBJ\CAN.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\CAN.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Sun Apr 12 19:53:34 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5050106: Last Updated: Fri Apr 17 15:12:02 2020
 <BR><P>
-<H3>Maximum Stack Usage =        264 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
+<H3>Maximum Stack Usage =        272 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
 TIM1_UP_IRQHandler &rArr; recv_heart &rArr; W25QXX_Write &rArr; W25QXX_Erase_Sector &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 <P>
@@ -322,23 +322,24 @@ Global Symbols
 </UL>
 <P><STRONG><a name="[14c]"></a>SystemCoreClockUpdate</STRONG> (Thumb, 142 bytes, Stack size 8 bytes, system_stm32f10x.o(.text), UNUSED)
 
-<P><STRONG><a name="[72]"></a>recv_heart</STRONG> (Thumb, 400 bytes, Stack size 72 bytes, brake.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 248 + Unknown Stack Size
+<P><STRONG><a name="[72]"></a>recv_heart</STRONG> (Thumb, 420 bytes, Stack size 80 bytes, brake.o(.text))
+<BR><BR>[Stack]<UL><LI>Max Depth = 256 + Unknown Stack Size
 <LI>Call Chain = recv_heart &rArr; W25QXX_Write &rArr; W25QXX_Erase_Sector &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[74]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_Write
 <LI><a href="#[75]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_Read
+<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
 <LI><a href="#[73]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__aeabi_memclr4
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_UP_IRQHandler
 </UL>
 
-<P><STRONG><a name="[76]"></a>urgency_stop</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, brake.o(.text))
+<P><STRONG><a name="[77]"></a>urgency_stop</STRONG> (Thumb, 82 bytes, Stack size 16 bytes, brake.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 144 + Unknown Stack Size
 <LI>Call Chain = urgency_stop &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
-<BR>[Calls]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
+<BR>[Calls]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
 <LI><a href="#[6e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;__2printf
 </UL>
 <BR>[Called By]<UL><LI><a href="#[26]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM1_UP_IRQHandler
@@ -404,13 +405,14 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriphInit
 </UL>
 
-<P><STRONG><a name="[77]"></a>Can_Send_Msg</STRONG> (Thumb, 104 bytes, Stack size 40 bytes, can.o(.text))
+<P><STRONG><a name="[76]"></a>Can_Send_Msg</STRONG> (Thumb, 104 bytes, Stack size 40 bytes, can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 48<LI>Call Chain = Can_Send_Msg &rArr; CAN_TransmitStatus
 </UL>
 <BR>[Calls]<UL><LI><a href="#[82]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_TransmitStatus
 <LI><a href="#[81]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;CAN_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;urgency_stop
+<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;urgency_stop
+<LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_heart
 </UL>
 
 <P><STRONG><a name="[83]"></a>Can_Receive_Msg</STRONG> (Thumb, 56 bytes, Stack size 32 bytes, can.o(.text))
@@ -435,7 +437,7 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[26]"></a>TIM1_UP_IRQHandler</STRONG> (Thumb, 132 bytes, Stack size 16 bytes, timer.o(.text))
-<BR><BR>[Stack]<UL><LI>Max Depth = 264 + Unknown Stack Size
+<BR><BR>[Stack]<UL><LI>Max Depth = 272 + Unknown Stack Size
 <LI>Call Chain = TIM1_UP_IRQHandler &rArr; recv_heart &rArr; W25QXX_Write &rArr; W25QXX_Erase_Sector &rArr; __2printf &rArr; _printf_char_file &rArr; _printf_char_common &rArr; __printf
 </UL>
 <BR>[Calls]<UL><LI><a href="#[8a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;TIM_GetITStatus
@@ -444,7 +446,7 @@ Global Symbols
 <LI><a href="#[83]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Receive_Msg
 <LI><a href="#[8d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;is_flag
 <LI><a href="#[8e]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;brake
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;urgency_stop
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;urgency_stop
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_heart
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f10x_hd.o(RESET)
@@ -1449,13 +1451,13 @@ Global Symbols
 <P><STRONG><a name="[81]"></a>CAN_Transmit</STRONG> (Thumb, 304 bytes, Stack size 8 bytes, stm32f10x_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_Transmit
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
 </UL>
 
 <P><STRONG><a name="[82]"></a>CAN_TransmitStatus</STRONG> (Thumb, 138 bytes, Stack size 8 bytes, stm32f10x_can.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = CAN_TransmitStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
+<BR>[Called By]<UL><LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;Can_Send_Msg
 </UL>
 
 <P><STRONG><a name="[176]"></a>CAN_CancelTransmit</STRONG> (Thumb, 48 bytes, Stack size 0 bytes, stm32f10x_can.o(.text), UNUSED)
@@ -2238,7 +2240,7 @@ Global Symbols
 </UL>
 <BR>[Called By]<UL><LI><a href="#[bd]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;W25QXX_Erase_Sector
 <LI><a href="#[10]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;RTC_IRQHandler
-<LI><a href="#[76]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;urgency_stop
+<LI><a href="#[77]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;urgency_stop
 <LI><a href="#[72]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;recv_heart
 <LI><a href="#[6f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;key_brake
 <LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;PeriphInit

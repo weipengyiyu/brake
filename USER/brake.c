@@ -17,8 +17,7 @@ static int brake_flag = 1;															//没有发送急停
 //收到心跳 统计信息（暂时用于统计包数和打印的标记位）
 void recv_heart(u8 *buf)
 {	
-//	FIL fil;
-//	UINT bw;
+	u8 msg[8] = {0};
 	u8 TEXT_Buffer[20] = {0};
 	u8 datatemp[20] = {0};
 	
@@ -47,6 +46,11 @@ void recv_heart(u8 *buf)
 	
 		W25QXX_Write((u8*)TEXT_Buffer,recv_cnt*SIZE,SIZECHAR);
 		W25QXX_Read((u8*)datatemp,recv_cnt*SIZE,SIZECHAR);
+		
+		/*向车控发送消息，判断急停模块是否在线*/
+		msg[7] = 2;
+		Can_Send_Msg(msg,8);
+		
 		LOG_MSG(" %d-%d-%d-%d:%d:%d ", datatemp[4]|(datatemp[5]<<8), 	
 		datatemp[6], datatemp[7], datatemp[8], datatemp[9], datatemp[10]);
 
