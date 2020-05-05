@@ -27,38 +27,6 @@ void PeriphInit(void)
 	W25QXX_Init();																																//初始化SPI FLASH的IO口
 	my_mem_init(SRAMIN);																													//初始化内部内存池
 	printf("\r\n    brake start!   \r\n");
-	//init_fatfs();																																	//文件系统初始化
 }		
 
-#if 0
-void init_fatfs(void)
-{
- 	u32 total,free;
-	u8 res=0;
-	
-	exfuns_init();							
-	f_mount(fs[0],"0:",1); 					
- 	res=f_mount(fs[1],"1:",1); 				
-	if(res==0X0D)
-	{
-		printf("Flash Disk Formatting...\r\n");	
-		res=f_mkfs("1:",1,4096);
-		if(res==0)
-		{
-			f_setlabel((const TCHAR *)"1:ALIENTEK");	
-			printf("Flash Disk Format Finish\r\n");	
-		}
-		else printf("Flash Disk Format Error\r\n");	
-		delay_ms(1000);
-	}													    
 
-	while(exf_getfree("1:",&total,&free))
-	{
-		printf("FALSH Fatfs Error!\r\n");
-		delay_ms(200);
-		LED0=!LED0;
-	}
- 	printf("flash total%d\r\n",total);				
- 	printf("flash free %d\r\n",free);				
-}
-#endif

@@ -72,7 +72,6 @@ void recv_heart(u8 *buf)
 
 		recv_cnt++;
 	}
-
 }
 
 void urgency_stop(void)
